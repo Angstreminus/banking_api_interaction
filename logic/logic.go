@@ -26,8 +26,10 @@ func GetMaxMinAVGValute(Reports []dateparser.ValCurs) Result {
 		min                   = float64(999999999.)
 		max                   = float64(0.)
 		avg           float64 = float64(0.)
+		cntValutes    int
 	)
 	for _, dayReport := range Reports {
+		cntValutes = len(dayReport.Valute)
 		for _, valuteReport := range dayReport.Valute {
 			//array of Valutes
 			currentValuteValue := valuteReport.Value
@@ -57,6 +59,6 @@ func GetMaxMinAVGValute(Reports []dateparser.ValCurs) Result {
 	res.MinValuteName = MinValuteName
 	res.MaxDate = MaxDate
 	res.MinDate = MinDate
-	res.Avg = (avg / 90) / 34
+	res.Avg = (avg / 90) / float64(cntValutes)
 	return res
 }

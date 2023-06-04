@@ -1,38 +1,15 @@
 package datesGenerator
 
-import "strconv"
+import (
+	"time"
+)
 
 func GenerateDates() []string {
+	today := time.Now()
 	var dates []string
-	var day string = ""
-	for i := 1; i <= 31; i++ {
-		if i < 10 {
-			day = "0" + string(strconv.FormatInt(int64(i), 10)+"/03/"+"2023")
-		} else {
-			day = string(strconv.FormatInt(int64(i), 10) + "/03/" + "2023")
-		}
-
-		dates = append(dates, day)
-	}
-
-	for i := 1; i <= 30; i++ {
-		if i < 10 {
-			day = "0" + string(strconv.FormatInt(int64(i), 10)+"/04/"+"2023")
-		} else {
-			day = string(strconv.FormatInt(int64(i), 10) + "/04/" + "2023")
-		}
-
-		dates = append(dates, day)
-	}
-
-	for i := 1; i <= 31; i++ {
-		if i < 10 {
-			day = "0" + string(strconv.FormatInt(int64(i), 10)+"/05/"+"2023")
-		} else {
-			day = string(strconv.FormatInt(int64(i), 10) + "/05/" + "2023")
-		}
-
-		dates = append(dates, day)
+	for i := 0; i < 91; i++ {
+		todayDay := today.AddDate(0, 0, -i).Format("02/01/2006")
+		dates = append(dates, todayDay)
 	}
 	return dates
 }
