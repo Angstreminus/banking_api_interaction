@@ -3,7 +3,7 @@ package logic
 import (
 	"strconv"
 	"strings"
-	dateparser "task/dateParser"
+	dateparser "task/xmlparcer"
 )
 
 type Result struct {

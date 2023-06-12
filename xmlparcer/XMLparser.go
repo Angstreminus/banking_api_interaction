@@ -1,4 +1,4 @@
-package dateparser
+package xmlparcer
 
 import (
 	"bytes"

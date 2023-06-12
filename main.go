@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	dateparser "task/dateParser"
 	"task/datesGenerator"
 	"task/logic"
+	dateparser "task/xmlparcer"
 )
 
 func main() {
